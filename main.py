@@ -1,26 +1,34 @@
-# Dinner Guest List
+# Dinner Guest List Generator
 
 # Define a Function to add a person to a list
-def add_jovan(dinner_list, human):
-    dinner_list.append(human)
+def add_guest(dinner_list: list, guest: str):
+    "Adds a guest to the dinner list"
+    dinner_list.append(guest)
     return dinner_list
 
 # Define a Function to remove a person from the list
-def remove_jovan(dinner_list, human):
-    if human in dinner_list:
-        dinner_list.remove(human)
+def remove_guest(dinner_list: list, guest: str):
+    "Removes a guest from the dinner list"
+    if guest in dinner_list:
+        dinner_list.remove(guest)
+    # When the person is not in the list
     else:
-        print(f"{human} is not in your list.")
+        print(f"{guest} is not in your list.")
     return dinner_list    
 
 
 # Define a Function to display the list
 
-def display(dinner_list):
+def view_list(dinner_list: list):
+    "This Displays the current Dinner List"
     if dinner_list:
-        print(dinner_list)
+        print("\n Your Dinner Guest List: ")
+        for x in range(dinner_list):
+            print(f"You have {dinner_list} in your list:")
+
+    # When there is nobody in the list
     else:
-        print("veiny ah")
+        print("You have nobody in your list!")
 
 
 # Create list
@@ -31,7 +39,23 @@ while True:
     print("Options: (1) Add Guest (2) Remove Guest (3) View Guests Invited (4) Exit")
     choice = input("Enter in your choice: ")
 
-    if choice 
+    if choice == "1":
+        guest = input("Enter in your Guest Name you want to Add: ")
+        dinner_list = add_guest(dinner_list, guest)
+
+    elif choice == "2":
+        guest = input("Enter in the Guest Name you want to Remove: ")
+        dinner_list = remove_guest(dinner_list, guest)
+        
+    elif choice == "3":
+        view_list(dinner_list)
+
+    elif choice == "4":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice, please enter 1, 2, 3, or 4.")
 
 # Create a loop that will keep appending names to the list until the maximum number is reached (6)
 
