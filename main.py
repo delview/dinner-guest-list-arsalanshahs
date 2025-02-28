@@ -23,12 +23,16 @@ def view_list(dinner_list: list):
     "This Displays the current Dinner List"
     if dinner_list:
         print("\n Your Dinner Guest List: ")
-        for x in range(dinner_list):
-            print(f"You have {dinner_list} in your list:")
+        for index, guest in enumerate(dinner_list, start=1):
+            print(index, guest)
 
     # When there is nobody in the list
     else:
         print("You have nobody in your list!")
+
+def print_list(dinner_list: list):
+    "This Prints out the Invitations for Each Guest"
+
 
 
 # Create list
@@ -36,7 +40,7 @@ dinner_list = []
 
 # Ask the user how many guests they want to invite
 while True:
-    print("Options: (1) Add Guest (2) Remove Guest (3) View Guests Invited (4) Exit")
+    print("Options: (1) Add Guest (2) Remove Guest (3) View Guests Invited (4) Print Out Invitations (5) Exit")
     choice = input("Enter in your choice: ")
 
     if choice == "1":
@@ -51,11 +55,14 @@ while True:
         view_list(dinner_list)
 
     elif choice == "4":
-        print("Goodbye!")
+        print("kkk")
         break
 
+    elif choice == "5":
+        pass
+
     else:
-        print("Invalid choice, please enter 1, 2, 3, or 4.")
+        print("Invalid choice, please enter 1, 2, 3, 4, or 5")
 
 # Create a loop that will keep appending names to the list until the maximum number is reached (6)
 
