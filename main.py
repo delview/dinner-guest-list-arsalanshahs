@@ -1,14 +1,22 @@
 # Dinner Guest List Generator
 
+# Create an Invitation Message
+invitation = input("Enter in your invitation message (Without the Name) (Ex: You have been invited to dinner): ")
+
+
 # Define a Function to add a person to a list
-def add_guest(dinner_list: list, guest: str):
-    "Adds a guest to the dinner list"
-    dinner_list.append(guest)
+def add_guest(dinner_list: list, guest: str, max_guests: int):
+    "Adds a guest to the dinner list if there is space"
+    if len(dinner_list) < max_guests:
+        dinner_list.append(guest)
+        print(f"{guest} has been added to your guest list")
+    else:
+        print("You have reached the maximum number of guests.")
     return dinner_list
 
 # Define a Function to remove a person from the list
 def remove_guest(dinner_list: list, guest: str):
-    "Removes a guest from the dinner list"
+    "Removes a guest from the dinner list only if they exist"
     if guest in dinner_list:
         dinner_list.remove(guest)
     # When the person is not in the list
@@ -35,8 +43,23 @@ def print_list(dinner_list: list):
 
 
 
+
 # Create list
 dinner_list = []
+
+while True:
+    try:
+        # Ask for number of guests
+        num = int(input("Enter in the amount of guests you are inviting: ").strip())
+        if num < 1:
+            print("It cannot be under 1 lol")
+        elif num > 100:
+            print("what the-")
+            break
+        else: 
+            break
+    except ValueError:
+        print("There's something wrong with that number..")
 
 # Ask the user how many guests they want to invite
 while True:
