@@ -1,5 +1,8 @@
 # Dinner Guest List Generator
 
+# Greet
+print("Welcome to the dinner guest list!")
+
 # Create an Invitation Message
 invitation = input("Enter in your invitation message (Without the Name) (Ex: You have been invited to dinner): ")
 
